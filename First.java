@@ -12,13 +12,14 @@ class TextFields implements ActionListener
     b1=new Button("Add");
     b1.setBounds(50,200,50,20);
     b2=new Button("Subtract");
-    b2.setBounds(100,200,50,20);
+    b2.setBounds(150,200,50,20);
     t1=new TextField();
-    t1.setBounds (50,50,100,20);
+    t1.setBounds (30,50,200,20);
     t2=new TextField();
-    t2.setBounds (50,100,100,20);
+    t2.setBounds (30,100,200,20);
     t3=new TextField();
-    t3.setBounds (50,150,100,20);
+    t3.setEditable(false);
+    t3.setBounds (30,150,200,20);
     f.add(b1);
     f.add(b2);
     f.add(t1);
@@ -29,21 +30,22 @@ class TextFields implements ActionListener
     f.setSize(300,300);
     f.setLayout(null);
     f.setVisible(true);
-    }  
+    } 
     public void actionPerformed(ActionEvent e)
     {
-        int a=Integer.parseInt(t1.getText());
-        int b=Integer.parseInt(t2.getText());
-        int c=0;
+        int a = Integer.parseInt(t1.getText());
+        int b = Integer.parseInt(t2.getText());
         if(e.getSource()==b1)
         {
-            c=a+b;
+            int c = a + b;
+            t3.setText(String.valueOf(c));
         }
-        else if(e.getSource()==b2)
+        else 
         {
-            c=a-b;
+            int c = a - b;
+            t3.setText(String.valueOf(c));
         }
-        t3.setText(String.valueOf(c));  
+
     }
     public static void main(String args[])
     {
