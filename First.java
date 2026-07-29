@@ -5,6 +5,7 @@ class TextFields implements ActionListener
 {
     TextField t1,t2,t3;
     Button b1,b2,b3,b4,b5;
+    Label l1,l2,l3;
     Frame f;
     TextFields()
     {
@@ -31,15 +32,24 @@ class TextFields implements ActionListener
         b5.setBounds(225,225,50,20);
         b5.addActionListener(this);
 
+        l1 = new Label("Num 1 :");
+        l1.setBounds(20,50,50,20);
+
+        l2 = new Label("Num 2 :");    
+        l2.setBounds(20,100,50,20);
+
+        l3 = new Label("Result :");
+        l3.setBounds(20,150,50,20);
+
         t1=new TextField();
-        t1.setBounds (30,50,200,20);
+        t1.setBounds (75,50,200,20);
         
         t2=new TextField();
-        t2.setBounds (30,100,200,20);
+        t2.setBounds (75,100,200,20);
         
         t3=new TextField();
         t3.setEditable(false);
-        t3.setBounds (30,150,200,20);
+        t3.setBounds (75,150,200,20);
         
         f.add(b1);
         f.add(b2);
@@ -47,6 +57,10 @@ class TextFields implements ActionListener
         f.add(b4);
         f.add(b5);
 
+        f.add(l1);
+        f.add(l2);
+        f.add(l3);
+        
         f.add(t1);
         f.add(t2);
         f.add(t3);
@@ -98,6 +112,6 @@ class TextFields implements ActionListener
     }
     public static void main(String args[])
     {
-        TextFields tf = new TextFields();       
+        TextFields tf = new TextFields();     
     }
 } 
