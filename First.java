@@ -10,27 +10,35 @@ class TextFields implements ActionListener
     TextFields()
     {
 
+        Color btn = new Color(248, 250, 252); 
+
         f=new Frame();
+        f.setBackground(new Color(173, 216, 230));
     
         b1=new Button("Add");
         b1.setBounds(50,200,50,20);
         b1.addActionListener(this);
+        b1.setBackground(btn);
 
         b2=new Button("Subtract");
         b2.setBounds(150,200,50,20);
         b2.addActionListener(this);
+        b2.setBackground(btn);
         
         b3 = new Button("Multiply");
         b3.setBounds(50,250,50,20);
         b3.addActionListener(this);
+        b3.setBackground(btn);
 
         b4=new Button("Divide");
         b4.setBounds(150,250,50,20);
         b4.addActionListener(this);
+        b4.setBackground(btn);
 
         b5 = new Button("Clear");
         b5.setBounds(225,225,50,20);
         b5.addActionListener(this);
+        b5.setBackground(btn);
 
         l1 = new Label("Num 1 :");
         l1.setBounds(20,50,50,20);
