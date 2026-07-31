@@ -97,7 +97,7 @@ class TextFields implements ActionListener
             a = Float.parseFloat(t1.getText());
         }
 
-        else if (!t2.getText().equals(""))
+        if (!t2.getText().equals(""))
         {
             b = Float.parseFloat(t2.getText());
         }
@@ -140,6 +140,10 @@ class TextFields implements ActionListener
             {
                 float c = a*a;
                 t3.setText(String.valueOf(c));
+            }
+            else 
+            {
+                t3.setText("Enter Values In Only one Field");
             }
         }
         else if(e.getSource()==b5)
