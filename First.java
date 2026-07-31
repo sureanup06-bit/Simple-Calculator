@@ -46,6 +46,7 @@ class TextFields implements ActionListener
 
         sqrt=new Button("Root");
         sqrt.setBounds(150,233,50,20);
+        sqrt.addActionListener(this);
 
         l1 = new Label("Num 1 :");
         l1.setBounds(20,50,50,20);
@@ -85,6 +86,14 @@ class TextFields implements ActionListener
         f.setSize(300,300);
         f.setLayout(null);
         f.setVisible(true);
+
+        f.addWindowListener(new WindowAdapter() 
+        { 
+            public void windowClosing(WindowEvent we) 
+            { 
+                f.dispose(); 
+            } 
+        });
     
     }  
     public void actionPerformed(ActionEvent e)
@@ -143,7 +152,60 @@ class TextFields implements ActionListener
             }
             else 
             {
-                t3.setText("Enter Values In Only one Field");
+                t3.setText("Enter Value In Only one Field");
+            }
+        }
+        else if (e.getSource()==sqrt)
+        {
+            if (t1.getText().equals(""))
+            {
+                if (b<0)
+                {
+                    t3.setText("Cannot Root A Negative Number");
+                }
+                else if (b>=0)
+                {
+                    float i;
+                    for (i=0;i<=b;i++)
+                    {
+                        if (i*i==b)
+                        {
+                            t3.setText(String.valueOf(i));
+                            break;
+                        }
+                        else
+                        {
+                            t3.setText("No Intigral Squair Root");
+                        }
+                    }
+                }
+            }
+            else if (t2.getText().equals(""))
+            {
+                if (a<0)
+                {
+                    t3.setText("Cannot Root A Negative Number");
+                }
+                else if (a>=0)
+                {
+                    float i;
+                    for (i=0;i<=a;i++)
+                    {
+                        if(i*i==a)
+                        {
+                            t3.setText(String.valueOf(i));
+                        break;
+                        }
+                        else
+                        {
+                            t3.setText("No Intigral Squair Root");
+                        }
+                    }
+                }
+            }
+            else
+            {
+                t3.setText("Enter Value In Only one Field");
             }
         }
         else if(e.getSource()==b5)
