@@ -4,7 +4,7 @@ import java.awt.event.*;
 class TextFields implements ActionListener
 {
     TextField t1,t2,t3;
-    Button b1,b2,b3,b4,b5;
+    Button b1,b2,b3,b4,b5,sq,sqrt;
     Label l1,l2,l3;
     Frame f;
     TextFields()
@@ -26,12 +26,12 @@ class TextFields implements ActionListener
         b2.setBackground(btn);
         
         b3 = new Button("Multiply");
-        b3.setBounds(50,250,50,20);
+        b3.setBounds(50,265,50,20);
         b3.addActionListener(this);
         b3.setBackground(btn);
 
         b4=new Button("Divide");
-        b4.setBounds(150,250,50,20);
+        b4.setBounds(150,265,50,20);
         b4.addActionListener(this);
         b4.setBackground(btn);
 
@@ -39,6 +39,13 @@ class TextFields implements ActionListener
         b5.setBounds(225,225,50,20);
         b5.addActionListener(this);
         b5.setBackground(btn);
+
+        sq = new Button("Squair");
+        sq.setBounds(50,233,50,20);
+        sq.addActionListener(this);
+
+        sqrt=new Button("Root");
+        sqrt.setBounds(150,233,50,20);
 
         l1 = new Label("Num 1 :");
         l1.setBounds(20,50,50,20);
@@ -64,6 +71,8 @@ class TextFields implements ActionListener
         f.add(b3);
         f.add(b4);
         f.add(b5);
+        f.add(sq);
+        f.add(sqrt);
 
         f.add(l1);
         f.add(l2);
@@ -80,8 +89,18 @@ class TextFields implements ActionListener
     }  
     public void actionPerformed(ActionEvent e)
     {
-        float a = Float.parseFloat(t1.getText());
-        float b = Float.parseFloat(t2.getText());
+        float a = 0;
+        float b = 0;
+
+        if (!t1.getText().equals(""))
+        {
+            a = Float.parseFloat(t1.getText());
+        }
+
+        else if (!t2.getText().equals(""))
+        {
+            b = Float.parseFloat(t2.getText());
+        }
 
         if(e.getSource()==b1)
         {
@@ -107,6 +126,19 @@ class TextFields implements ActionListener
             else
             {
                 float c = a/b;
+                t3.setText(String.valueOf(c));
+            }
+        }
+        else if (e.getSource()==sq)
+        {
+            if (t1.getText().equals(""))
+            {
+                float c = b*b;
+                t3.setText(String.valueOf(c));
+            }
+            else if (t2.getText().equals(""))
+            {
+                float c = a*a;
                 t3.setText(String.valueOf(c));
             }
         }
