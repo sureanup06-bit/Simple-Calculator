@@ -218,6 +218,6 @@ class SimpleClaculater implements ActionListener
     }
     public static void main(String args[])
     {
-        SimpleClaculater sc = new SimpleClaculater();     
+        new SimpleClaculater();    
     }
 } 
