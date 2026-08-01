@@ -1,13 +1,13 @@
 import java.awt.*;
 import java.awt.event.*;
 
-class TextFields implements ActionListener
+class SimpleClaculater implements ActionListener
 {
     TextField t1,t2,t3;
     Button b1,b2,b3,b4,b5,sq,sqrt;
     Label l1,l2,l3;
     Frame f;
-    TextFields()
+    SimpleClaculater()
     {
 
         Color btn = new Color(248, 250, 252); 
@@ -218,6 +218,6 @@ class TextFields implements ActionListener
     }
     public static void main(String args[])
     {
-        TextFields tf = new TextFields();     
+        SimpleClaculater sc = new SimpleClaculater();     
     }
 } 
