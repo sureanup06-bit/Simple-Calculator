@@ -4,7 +4,7 @@ import java.awt.event.*;
 class SimpleClaculater implements ActionListener
 {
     TextField t1,t2,t3;
-    Button b1,b2,b3,b4,b5,sq,sqrt,cube,c_root;
+    Button b1,b2,b3,b4,b5,sq,sqrt,cube,c_root,mod;
     Label l1,l2,l3;
     Frame f;
     SimpleClaculater()
@@ -16,45 +16,49 @@ class SimpleClaculater implements ActionListener
         f.setBackground(new Color(173, 216, 230));
     
         b1=new Button("Add");
-        b1.setBounds(50,200,50,20);
+        b1.setBounds(100,200,50,20);
         b1.addActionListener(this);
         b1.setBackground(btn);
 
         b2=new Button("Subtract");
-        b2.setBounds(150,200,50,20);
+        b2.setBounds(200,200,50,20);
         b2.addActionListener(this);
         b2.setBackground(btn);
         
         b3 = new Button("Multiply");
-        b3.setBounds(50,233,50,20);
+        b3.setBounds(100,233,50,20);
         b3.addActionListener(this);
         b3.setBackground(btn);
 
         b4=new Button("Divide");
-        b4.setBounds(150,233,50,20);
+        b4.setBounds(200,233,50,20);
         b4.addActionListener(this);
         b4.setBackground(btn);
 
         b5 = new Button("Clear");
-        b5.setBounds(225,225,50,20);
+        b5.setBounds(200,335,50,20);
         b5.addActionListener(this);
         b5.setBackground(btn);
 
         sq = new Button("Square");
-        sq.setBounds(50,265,50,20);
+        sq.setBounds(100,265,50,20);
         sq.addActionListener(this);
 
         sqrt=new Button("S.Root");
-        sqrt.setBounds(150,265,50,20);
+        sqrt.setBounds(200,265,50,20);
         sqrt.addActionListener(this);
 
         cube = new Button("Cube");
-        cube.setBounds(50,300,50,20);
+        cube.setBounds(100,300,50,20);
         cube.addActionListener(this);
 
         c_root = new Button("C.Root");
-        c_root.setBounds(150,300,50,20);
+        c_root.setBounds(200,300,50,20);
         c_root.addActionListener(this);
+
+        mod = new Button("Mod");
+        mod.setBounds(100,335,50,20);
+        mod.addActionListener(this);
 
         l1 = new Label("Num 1 :");
         l1.setBounds(20,50,50,20);
@@ -84,7 +88,8 @@ class SimpleClaculater implements ActionListener
         f.add(sqrt);
         f.add(cube);
         f.add(c_root);
-
+        f.add(mod); 
+        
         f.add(l1);
         f.add(l2);
         f.add(l3);
@@ -286,6 +291,18 @@ class SimpleClaculater implements ActionListener
             else
             {
                 t3.setText("Enter Value In Only one Field");
+            }
+        }
+        else if (e.getSource()==mod)
+        {
+            if (b == 0)
+            {
+                t3.setText("Error: Division By Zero Detected");
+            }
+            else
+            {
+                float c = a % b;
+                t3.setText(String.valueOf(c));
             }
         }
         else if(e.getSource()==b5)
