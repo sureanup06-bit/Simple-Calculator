@@ -4,7 +4,7 @@ import java.awt.event.*;
 class SimpleClaculater implements ActionListener
 {
     TextField t1,t2,t3;
-    Button b1,b2,b3,b4,b5,sq,sqrt;
+    Button b1,b2,b3,b4,b5,sq,sqrt,cube,c_root;
     Label l1,l2,l3;
     Frame f;
     SimpleClaculater()
@@ -26,12 +26,12 @@ class SimpleClaculater implements ActionListener
         b2.setBackground(btn);
         
         b3 = new Button("Multiply");
-        b3.setBounds(50,265,50,20);
+        b3.setBounds(50,233,50,20);
         b3.addActionListener(this);
         b3.setBackground(btn);
 
         b4=new Button("Divide");
-        b4.setBounds(150,265,50,20);
+        b4.setBounds(150,233,50,20);
         b4.addActionListener(this);
         b4.setBackground(btn);
 
@@ -40,13 +40,21 @@ class SimpleClaculater implements ActionListener
         b5.addActionListener(this);
         b5.setBackground(btn);
 
-        sq = new Button("Squair");
-        sq.setBounds(50,233,50,20);
+        sq = new Button("Square");
+        sq.setBounds(50,265,50,20);
         sq.addActionListener(this);
 
-        sqrt=new Button("Root");
-        sqrt.setBounds(150,233,50,20);
+        sqrt=new Button("S.Root");
+        sqrt.setBounds(150,265,50,20);
         sqrt.addActionListener(this);
+
+        cube = new Button("Cube");
+        cube.setBounds(50,300,50,20);
+        cube.addActionListener(this);
+
+        c_root = new Button("C.Root");
+        c_root.setBounds(150,300,50,20);
+        c_root.addActionListener(this);
 
         l1 = new Label("Num 1 :");
         l1.setBounds(20,50,50,20);
@@ -74,6 +82,8 @@ class SimpleClaculater implements ActionListener
         f.add(b5);
         f.add(sq);
         f.add(sqrt);
+        f.add(cube);
+        f.add(c_root);
 
         f.add(l1);
         f.add(l2);
@@ -83,7 +93,7 @@ class SimpleClaculater implements ActionListener
         f.add(t2);
         f.add(t3);
 
-        f.setSize(300,300);
+        f.setSize(300,400);
         f.setLayout(null);
         f.setVisible(true);
 
@@ -199,6 +209,76 @@ class SimpleClaculater implements ActionListener
                         else
                         {
                             t3.setText("No Intigral Squair Root");
+                        }
+                    }
+                }
+            }
+            else
+            {
+                t3.setText("Enter Value In Only one Field");
+            }
+        }
+        else if (e.getSource()==cube)
+        {
+            if (t1.getText().equals(""))
+            {
+                float c = b*b*b;
+                t3.setText(String.valueOf(c));
+            }
+            else if (t2.getText().equals(""))
+            {
+                float c = a*a*a;
+                t3.setText(String.valueOf(c));
+            }
+            else 
+            {
+                t3.setText("Enter Value In Only one Field");
+            }
+        }
+        else if (e.getSource()==c_root)
+        {
+            if (t1.getText().equals(""))
+            {
+                if (b<0)
+                {
+                    t3.setText("Cannot Root A Negative Number");
+                }
+                else if (b>=0)
+                {
+                    float i;
+                    for (i=0;i<=b;i++)
+                    {
+                        if (i*i*i==b)
+                        {
+                            t3.setText(String.valueOf(i));
+                            break;
+                        }
+                        else
+                        {
+                            t3.setText("No Intigral Cube Root");
+                        }
+                    }
+                }
+            }
+            else if (t2.getText().equals(""))
+            {
+                if (a<0)
+                {
+                    t3.setText("Cannot Root A Negative Number");
+                }
+                else if (a>=0)
+                {
+                    float i;
+                    for (i=0;i<=a;i++)
+                    {
+                        if(i*i*i==a)
+                        {
+                            t3.setText(String.valueOf(i));
+                        break;
+                        }
+                        else
+                        {
+                            t3.setText("No Intigral Cube Root");
                         }
                     }
                 }
