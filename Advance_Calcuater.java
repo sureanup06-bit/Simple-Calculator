@@ -1,13 +1,13 @@
 import java.awt.*;
 import java.awt.event.*;
 
-class SimpleClaculater implements ActionListener
+class Advance_Calcuater implements ActionListener
 {
     TextField t1,t2,t3;
-    Button b1,b2,b3,b4,b5,sq,sqrt,cube,c_root,mod;
+    Button b1,b2,b3,b4,b5,sq,sqrt,cube,c_root,mod,power,percent;
     Label l1,l2,l3;
     Frame f;
-    SimpleClaculater()
+    Advance_Calcuater()
     {
 
         Color btn = new Color(248, 250, 252); 
@@ -35,11 +35,6 @@ class SimpleClaculater implements ActionListener
         b4.addActionListener(this);
         b4.setBackground(btn);
 
-        b5 = new Button("Clear");
-        b5.setBounds(200,335,50,20);
-        b5.addActionListener(this);
-        b5.setBackground(btn);
-
         sq = new Button("Square");
         sq.setBounds(100,265,50,20);
         sq.addActionListener(this);
@@ -59,6 +54,19 @@ class SimpleClaculater implements ActionListener
         mod = new Button("Mod");
         mod.setBounds(100,335,50,20);
         mod.addActionListener(this);
+
+        power = new Button("Power");
+        power.setBounds(200,335,50,20);
+        power.addActionListener(this);
+
+        percent = new Button("Percent");
+        percent.setBounds(100,370,50,20);
+        percent.addActionListener(this);
+
+        b5 = new Button("Clear");
+        b5.setBounds(200,370,50,20);
+        b5.addActionListener(this);
+        b5.setBackground(btn);
 
         l1 = new Label("Num 1 :");
         l1.setBounds(20,50,50,20);
@@ -89,7 +97,9 @@ class SimpleClaculater implements ActionListener
         f.add(cube);
         f.add(c_root);
         f.add(mod); 
-        
+        f.add(power);
+        f.add(percent);
+
         f.add(l1);
         f.add(l2);
         f.add(l3);
@@ -98,7 +108,7 @@ class SimpleClaculater implements ActionListener
         f.add(t2);
         f.add(t3);
 
-        f.setSize(300,400);
+        f.setSize(300,410);
         f.setLayout(null);
         f.setVisible(true);
 
@@ -305,6 +315,27 @@ class SimpleClaculater implements ActionListener
                 t3.setText(String.valueOf(c));
             }
         }
+        else if(e.getSource()==power)
+        {
+            float result = 1;
+            for (int i=1;i<=b;i++)
+            {
+                result = result * a;
+            }
+            t3.setText(String.valueOf(result));
+        }
+        else if(e.getSource()==percent)
+        {
+            if(b == 0)
+            {
+                t3.setText("Error: Division By Zero Detected");
+            }
+            else
+            {
+            float c = (a/b)*100;
+            t3.setText(String.valueOf(c)+"%");
+            }
+        }
         else if(e.getSource()==b5)
         {
             t1.setText("");
@@ -315,6 +346,6 @@ class SimpleClaculater implements ActionListener
     }
     public static void main(String args[])
     {
-        new SimpleClaculater();    
+        new Advance_Calcuater();    
     }
 } 
