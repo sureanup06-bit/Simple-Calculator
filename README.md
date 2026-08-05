@@ -1,43 +1,62 @@
-# Simple Calculator (Java AWT)
+# Advanced Calculator (Java AWT)
 
-A basic **GUI Calculator** built using **Java AWT (Abstract Window Toolkit)**.  
-This project performs common arithmetic operations and also includes **square** and **integer square root** calculations.
+A GUI-based **Advanced Calculator** built using **Java AWT (Abstract Window Toolkit)**.
+
+This project performs both **basic arithmetic operations** and **advanced mathematical calculations** such as square, cube, roots, modulus, power, and percentage.
 
 ---
 
 ## Features
 
-- Addition
-- Subtraction
-- Multiplication
-- Division
-- Square of a number
-- Integer square root
-- Clear all fields
-- Error handling for:
-  - Division by zero
-  - Negative square roots
-  - Entering values in both fields for square/root operations
+### Basic Operations
+
+* Addition
+* Subtraction
+* Multiplication
+* Division
+
+### Advanced Operations
+
+* Square of a number
+* Integer square root
+* Cube of a number
+* Integer cube root
+* Modulus (remainder)
+* Power (`a^b`)
+* Percentage calculation
+
+### Utility
+
+* Clear all fields
+
+### Error Handling
+
+* Division by zero
+* Negative square roots
+* Using both fields for single-input operations
+* Non-perfect square roots
+* Non-perfect cube roots
 
 ---
 
 ## Technologies Used
 
-- Java
-- AWT (Abstract Window Toolkit)
-- Event Handling (`ActionListener`, `WindowAdapter`)
+* **Java**
+* **AWT (Abstract Window Toolkit)**
+* **Event Handling**
+
+  * `ActionListener`
+  * `WindowAdapter`
 
 ---
 
 ## Project Structure
 
-```
-
-SimpleCalculator/
+```text
+AdvancedCalculator/
 │
-├── SimpleClaculater.java
+├── Advance_Calcuater.java
 └── README.md
-
 ```
 
 ---
@@ -47,13 +66,13 @@ SimpleCalculator/
 ### Compile
 
 ```bash
-javac SimpleClaculater.java
+javac Advance_Calcuater.java
 ```
 
 ### Run
 
 ```bash
-java SimpleClaculater
+java Advance_Calcuater
 ```
 
 ---
@@ -62,17 +81,54 @@ java SimpleClaculater
 
 The application contains:
 
-- **Num 1** input field
-- **Num 2** input field
-- **Result** field (read-only)
-- Operation buttons:
-  - Add
-  - Subtract
-  - Multiply
-  - Divide
-  - Square
-  - Root
-  - Clear
+* **Num 1** input field
+* **Num 2** input field
+* **Result** field (read-only)
+
+### Buttons
+
+* Add
+* Subtract
+* Multiply
+* Divide
+* Square
+* S.Root
+* Cube
+* C.Root
+* Mod
+* Power
+* Percent
+* Clear
+
+---
+
+## Addition
+
+Example:
+
+```text
+Num 1 = 10
+Num 2 = 5
+Result = 15
+```
+
+---
+
+## Division
+
+Example:
+
+```text
+Num 1 = 20
+Num 2 = 4
+Result = 5
+```
+
+If the second number is zero:
+
+```text
+Error: Division By Zero Detected
+```
 
 ---
 
@@ -82,56 +138,156 @@ Enter a value in **only one field**.
 
 Example:
 
-- Num 1 = 5
-- Num 2 = empty
-- Result = 25
+```text
+Num 1 = 5
+Num 2 = empty
+Result = 25
+```
 
 ---
 
-## Integer Square Root Operation
+## Integer Square Root
 
-Calculates the square root only if it is a **perfect square**.
+Works only for **perfect squares**.
 
 Examples:
 
-- 25 → 5
-- 36 → 6
-- 20 → No Integral Square Root
+```text
+25 → 5
+36 → 6
+20 → No Intigral Squair Root
+```
+
+Negative numbers:
+
+```text
+Cannot Root A Negative Number
+```
+
+---
+
+## Cube Operation
+
+Example:
+
+```text
+Num 1 = 3
+Result = 27
+```
+
+---
+
+## Integer Cube Root
+
+Works only for **perfect cubes**.
+
+Examples:
+
+```text
+27 → 3
+64 → 4
+30 → No Intigral Cube Root
+```
+
+---
+
+## Modulus Operation
+
+Returns the remainder.
+
+Example:
+
+```text
+10 % 3 = 1
+```
+
+---
+
+## Power Operation
+
+Calculates `a^b` using a loop.
+
+Example:
+
+```text
+2^5 = 32
+```
+
+---
+
+## Percentage Operation
+
+Calculates what percentage **Num 1 is of Num 2**.
+
+Formula:
+
+```text
+(a / b) × 100
+```
+
+Example:
+
+```text
+40 out of 50 = 80%
+```
+
+---
+
+## Clear Operation
+
+Removes all values from:
+
+* Num 1
+* Num 2
+* Result
 
 ---
 
 ## Error Messages
 
-| Condition | Message |
-|---|---|
-| Division by zero | `Error: Division By Zero Detected` |
-| Negative root | `Cannot Root A Negative Number` |
-| Values in both fields for square/root | `Enter Value In Only one Field` |
+| Condition                                        | Message                            |
+| ------------------------------------------------ | ---------------------------------- |
+| Division by zero                                 | `Error: Division By Zero Detected` |
+| Negative square root                             | `Cannot Root A Negative Number`    |
+| Both fields used for square/root/cube operations | `Enter Value In Only one Field`    |
+| Non-perfect square                               | `No Intigral Squair Root`          |
+| Non-perfect cube                                 | `No Intigral Cube Root`            |
 
 ---
 
 ## Sample Output
 
-```
-
+```text
 Num 1: 9
 Num 2:
 
-[Root]
+[S.Root]
 
 Result: 3
-
 ```
+
+---
+
+## Concepts Demonstrated
+
+* AWT GUI programming
+* Event-driven programming
+* Conditional statements
+* Loops
+* Input validation
+* Custom mathematical algorithms
 
 ---
 
 ## Future Improvements
 
-- Use **Swing** instead of AWT
-- Add decimal square root support using `Math.sqrt()`
-- Improve button sizes and layout
-- Add keyboard support
-- Add scientific calculator functions
+* Use **Swing** or **JavaFX**
+* Add decimal square root support using `Math.sqrt()`
+* Add decimal cube root support
+* Support negative exponents
+* Improve button sizes and layout using `GridLayout`
+* Add keyboard support
+* Add scientific functions (`sin`, `cos`, `tan`, `log`)
 
 ---
 
@@ -139,9 +295,9 @@ Result: 3
 
 **Anup Sure**
 
-- Java
-- C++
-- HTML, CSS, JavaScript
+* Java
+* C++
+* HTML, CSS, JavaScript
 
 ---
 
